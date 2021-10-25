@@ -3,7 +3,7 @@ public class Subtract implements Runnable{
     int number;
     //int flag;
     
-    public Subtract(Warehouse quantity, int minusOP) {
+    public Subtract(Warehouse quantity, int minusOP /*int bugFlagOP*/) {
         this.storage = quantity;
         this.number = minusOP;
         //this.number = bugFlagOP;
@@ -11,8 +11,12 @@ public class Subtract implements Runnable{
 
     @Override
     public synchronized void run() {
-        for(int i = 0; i < number; i++){
-            storage.minusSize();
+        //if(flag == 0){
+            //synchronized (this){
+                for(int i = 0; i < number; i++){
+                    storage.minusSize();
+                //}
+            //}
         }
     }
 }

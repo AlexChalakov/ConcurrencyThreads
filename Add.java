@@ -3,7 +3,7 @@ public class Add implements Runnable{
     int number;
     //int flag;
 
-    public Add(Warehouse quantity, int addOP) {
+    public Add(Warehouse quantity, int addOP /*int bugFlagOP*/) {
         this.storage = quantity;
         this.number = addOP;
         //this.flag = bugFlagOP;
@@ -11,8 +11,12 @@ public class Add implements Runnable{
 
     @Override
     public synchronized void run() {
-        for(int i = 0; i < number; i++){
-            storage.addSize();
+        //if(flag == 0){
+            //synchronized (this){
+                for(int i = 0; i < number; i++){
+                    storage.addSize();
+                //}
+            //}
         }
     }
 }

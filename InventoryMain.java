@@ -10,8 +10,8 @@ public class InventoryMain { //main class
 
         Warehouse quantity = new Warehouse(); //creating new instance of the warehouse 
 
-        Thread t1 = new Thread(new Add(quantity, addOP));
-        Thread t2 = new Thread(new Subtract(quantity, minusOP));
+        Thread t1 = new Thread(new Add(quantity, addOP /*bugFlagOP*/));
+        Thread t2 = new Thread(new Subtract(quantity, minusOP /*bugFlagOP*/));
 
         t1.start();
         t2.start();
