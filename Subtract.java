@@ -1,12 +1,12 @@
 public class Subtract implements Runnable{
     Warehouse storage;
     int number;
-    //int flag;
+    int flag;
     
-    public Subtract(Warehouse quantity, int minusOP /*int bugFlagOP*/) {
+    public Subtract(Warehouse quantity, int minusOP, int bugFlagOP) {
         this.storage = quantity;
         this.number = minusOP;
-        //this.number = bugFlagOP;
+        this.flag = bugFlagOP;
     }
 
     @Override

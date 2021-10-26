@@ -1,12 +1,12 @@
 public class Add implements Runnable{
     Warehouse storage;
     int number;
-    //int flag;
+    int flag;
 
-    public Add(Warehouse quantity, int addOP /*int bugFlagOP*/) {
+    public Add(Warehouse quantity, int addOP, int bugFlagOP) {
         this.storage = quantity;
         this.number = addOP;
-        //this.flag = bugFlagOP;
+        this.flag = bugFlagOP;
     }
 
     @Override
