@@ -10,13 +10,13 @@ public class Subtract implements Runnable{
     }
 
     @Override
-    public synchronized void run() {
-        //if(flag == 0){
-            //synchronized (this){
-                for(int i = 0; i < number; i++){
-                    storage.minusSize();
-                //}
-            //}
+    public void run() {
+        if(flag == 0){
+            synchronized (this){
+                storage.minusSize();
+            }
+        } else if (flag == 1){
+            storage.minusSizeNoSync();
         }
     }
 }
