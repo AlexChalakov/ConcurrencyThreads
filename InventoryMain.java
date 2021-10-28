@@ -23,7 +23,6 @@ public class InventoryMain { //main class
         }
 
         for (Thread t : threadList){
-            //Thread.sleep(1000);
             t.start();
         }
 

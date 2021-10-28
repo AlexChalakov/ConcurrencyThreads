@@ -14,13 +14,21 @@ public class Warehouse {
 
     //two unsynchronized methods for add and subtract
     public void addSizeNoSync(){
-        //Thread.sleep(100);
+        try {
+            Thread.sleep(100);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         storageSize += 1;
         System.out.println("Added. Inventory size = " + storageSize);
     }
 
     public void minusSizeNoSync(){
-        //Thread.sleep(100);
+        try {
+            Thread.sleep(10);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         storageSize -= 1;
         System.out.println("Removed. Inventory size = " + storageSize);
     }
