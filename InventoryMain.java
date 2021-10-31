@@ -14,14 +14,17 @@ public class InventoryMain { //main class
         Warehouse quantity = new Warehouse(); //creating new instance of the warehouse 
         ArrayList<Thread> threadList = new ArrayList<Thread>(); //an array list so that they can be joined after they finish
 
+        //creating thread operation for every add one
         for(int i = 0; i< addOP; i++){
-            threadList.add(new Thread(new Add(quantity, addOP, bugFlagOP)));
+            threadList.add(new Thread(new Add(quantity, addOP, bugFlagOP))); //passing 3 times
         }
 
+        //creating thread operation for every minus one
         for(int i = 0; i< minusOP; i++){
-            threadList.add(new Thread(new Subtract(quantity, minusOP, bugFlagOP)));
+            threadList.add(new Thread(new Subtract(quantity, minusOP, bugFlagOP))); //passing 3 arguments
         }
 
+        //loop for each of the elements in threadList
         for (Thread t : threadList){
             t.start();
         }
